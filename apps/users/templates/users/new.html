@@ -6,7 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}">
 </head>
 <body>
+
 	<div id="pagewrap">
+		{% if messages %}
+			<ul class="messages">
+    		{% for message in messages %}
+    			<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    		{% endfor %}
+			</ul>
+		{% endif %}
 		<h1>Add a new user</h1>
 		<form id="new_user" action="/users/create" method="POST">
 			{% csrf_token %}

@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.contrib import messages
 from .models import User
 
 # Create your views here.
@@ -13,10 +14,15 @@ def create(request):
 	last_name = request.POST['last_name']
 	email = request.POST['email']
 
+	errors = User.objects.validate_user(request.POST)
 
-	User.objects.create(first_name=first_name, last_name=last_name, email=email)
-
-	return redirect('/users')
+	if len(errors):
+		for tag, error in errors.iteritems():
+			messages.error(request, error)
+		return redirect('/users/new')
+	else:
+		User.objects.create(first_name=first_name, last_name=last_name, email=email)
+		return redirect('/users')
 
 def show(request, id):
 	return render(request, 'users/show.html', {'user': User.objects.get(id=id)})

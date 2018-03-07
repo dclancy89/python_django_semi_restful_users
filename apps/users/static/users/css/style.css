@@ -2,6 +2,15 @@ body {
 	font-family: Helvetica;
 }
 
+ul.messages {
+	list-style:none;
+}
+
+li.error {
+	color: red;
+	font-size: 18px;
+}
+
 #pagewrap {
 	max-width: 75rem;
 	width: 100%;
