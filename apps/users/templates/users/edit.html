@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi RESTful Users</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}">
+</head>
+<body>
+	<div id="pagewrap">
+		<h1>Edit User {{ user.id }}</h1>
+		<form id="new_user" action="/users/update" method="POST">
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{ user.id }}"
+			<label>
+				First Name
+				<input type="text" name="first_name" value="{{ user.first_name }}">
+			</label>
+
+			<label>
+				Last Name
+				<input type="text" name="last_name" value="{{ user.last_name }}">
+			</label>
+
+			<label>
+				Email
+				<input type="text" name="email" value="{{ user.email }}">
+			</label>
+			<input type="submit" value="Update" class="button">
+		</form>
+		<hr />
+		<a href="/users" class="button">Go Back</a>
+	</div>
+
+</body>
+</html>

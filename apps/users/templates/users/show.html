@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semi RESTful Users</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}">
+</head>
+<body>
+	<div id="pagewrap">
+
+		<h1>User {{ user.id }}</h1>
+		<p><span class="italic">Full Name:</span> {{ user.first_name }}&nbsp;{{ user.last_name }}</p>
+		<p><span class="italic">Email:</span> {{ user.email }}</p>
+		<p><span class="italic">Created at:</span> {{ user.created_at }}</p>
+
+		<a href="/users/{{ user.id }}/edit">Edit</a> | <a href="/users/{{ user.id }}/delete">Delete</a>
+		<hr />
+		<a href="/users" class="button">Go Back</a>
+	</div>
+
+</body>
+</html>

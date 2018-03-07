@@ -1,0 +1,68 @@
+body {
+	font-family: Helvetica;
+}
+
+#pagewrap {
+	max-width: 75rem;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 4rem;
+}
+
+table {
+	border-spacing: 0px;
+	border: 1px solid black;
+}
+
+table thead {
+	border-bottom: 1px solid black;
+}
+
+td, th {
+	padding: 5px 15px;
+	border-right: 1px solid black;
+}
+
+td:last-child, th:last-child {
+	border: none;
+}
+
+th {
+	background-color: #AAA;
+}
+
+form label {
+	display: block;
+	margin: 0.5rem 0;
+	font-size: 18px;
+}
+
+form input[type="text"] {
+	display: block;
+	font-size: 18px;
+	padding: 0.2rem;
+	min-width: 225px;
+}
+
+span.italic {
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+.button {
+	font-size: 16px;
+	background-color: #4286f4;
+	color: #fff;
+	border-radius: 0;
+	border: none;
+	padding: 8px 18px;
+	margin: 0.5rem 0;
+	display: table;
+	text-decoration: none;
+	transition: opacity 0.2s ease 0s;
+}
+
+.button:hover {
+	opacity: 0.7;
+}
